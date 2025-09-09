@@ -16,6 +16,10 @@ const config: Config = {
         'dna-float': 'dnaFloat 6s ease-in-out infinite',
       },
       keyframes: {
+        dnaHelixRotate: {
+          '0%': { transform: 'rotateY(0deg)' },
+          '100%': { transform: 'rotateY(360deg)' },
+        },
         dnaRotate: {
           '0%': { transform: 'rotateY(0deg) rotateX(10deg)' },
           '100%': { transform: 'rotateY(360deg) rotateX(10deg)' },

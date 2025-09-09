@@ -1,6 +1,6 @@
 'use client';
 
-import DNAAnimation from './DNAAnimation';
+import { useEffect, useRef } from 'react';
 
 interface HeroProps {
   language: 'fr' | 'en';
@@ -8,57 +8,116 @@ interface HeroProps {
 
 const translations = {
   fr: {
-    title: 'Révélez le potentiel de votre organisation',
-    subtitle: 'Core-Sense analyse la congruence entre vos valeurs, votre culture et vos pratiques pour optimiser votre performance organisationnelle.',
-    cta: 'Découvrir notre approche'
+    title: 'Révéler et Activer l\'ADN<br>de votre entreprise',
+    subtitle: 'Notre méthodologie révèle, modélise et active l\'ADN unique pour faire croître la valeur patrimoniale, économique et humaine de votre entreprise.'
   },
   en: {
-    title: 'Reveal your organization\'s potential',
-    subtitle: 'Core-Sense analyzes the congruence between your values, culture and practices to optimize your organizational performance.',
-    cta: 'Discover our approach'
+    title: 'Reveal and Activate the DNA<br>of your company',
+    subtitle: 'Our methodology reveals, models and activates the unique DNA to grow the patrimonial, economic and human value of your company.'
   }
 };
 
 export default function Hero({ language }: HeroProps) {
   const t = translations[language];
+  const dnaHelixRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const initDNAHelix = () => {
+      const helixContainer = document.getElementById('dna-double-helix');
+      if (!helixContainer) return;
+
+      // Clear existing content
+      helixContainer.innerHTML = '';
+
+      // Create two helix strands
+      const strand1 = document.createElement('div');
+      const strand2 = document.createElement('div');
+      strand1.className = 'helix-strand';
+      strand2.className = 'helix-strand';
+
+      // Generate helix points and bases
+      const numPoints = 20;
+      const radius = 80;
+      const height = 280;
+
+      for (let i = 0; i < numPoints; i++) {
+        const angle1 = (i / numPoints) * Math.PI * 4; // 2 full rotations
+        const angle2 = angle1 + Math.PI; // Opposite strand
+        const y = (i / numPoints) * height;
+
+        // Strand 1 point
+        const point1 = document.createElement('div');
+        point1.className = 'helix-point';
+        const x1 = Math.cos(angle1) * radius + 150;
+        const z1 = Math.sin(angle1) * radius;
+        point1.style.left = x1 + 'px';
+        point1.style.top = y + 'px';
+        point1.style.transform = `translateZ(${z1}px)`;
+        strand1.appendChild(point1);
+
+        // Strand 2 point
+        const point2 = document.createElement('div');
+        point2.className = 'helix-point';
+        const x2 = Math.cos(angle2) * radius + 150;
+        const z2 = Math.sin(angle2) * radius;
+        point2.style.left = x2 + 'px';
+        point2.style.top = y + 'px';
+        point2.style.transform = `translateZ(${z2}px)`;
+        strand2.appendChild(point2);
+
+        // Create base connections every 3rd point
+        if (i % 3 === 0 && i < numPoints - 3) {
+          const base = document.createElement('div');
+          base.className = 'helix-base';
+          const baseWidth = Math.abs(x2 - x1);
+          const baseLeft = Math.min(x1, x2);
+          base.style.width = baseWidth + 'px';
+          base.style.left = baseLeft + 'px';
+          base.style.top = y + 'px';
+          base.style.transform = `translateZ(${(z1 + z2) / 2}px)`;
+          helixContainer.appendChild(base);
+        }
+      }
+
+      helixContainer.appendChild(strand1);
+      helixContainer.appendChild(strand2);
+    };
+
+    // Initialize DNA helix
+    initDNAHelix();
+  }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900 opacity-50"></div>
-      
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Text Content */}
-          <div className="text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 lg:mb-8">
-              <span className="gradient-text">{t.title}</span>
-            </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-8 lg:mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              {t.subtitle}
-            </p>
-            <a
-              href="#notre-approche"
-              className="inline-block bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
-            >
-              {t.cta}
-            </a>
-          </div>
-
-          {/* DNA Animation */}
-          <div className="flex justify-center lg:justify-end">
-            <DNAAnimation />
+    <>
+      <section className="hero">
+        <div className="container">
+          <div className="hero-content ">
+            <div className="hero-text">
+              <h1 dangerouslySetInnerHTML={{ __html: t.title }} />
+              <p>{t.subtitle}</p>
+            </div>
+            <div className="hero-visual">
+              <div className="dna-container">
+                <div className="dna-helix" id="dna-helix">
+                  <div className="dna-double-helix" id="dna-double-helix">
+                    {/* La double hélice sera générée par JavaScript */}
+                  </div>
+                </div>
+                <div className="keywords-cloud" id="keywords-cloud">
+                  <div className="keyword">Croissance</div>
+                  <div className="keyword">Profitabilité</div>
+                  <div className="keyword">Performance Opérationnelle</div>
+                  <div className="keyword">Leadership Authentique</div>
+                  <div className="keyword">Transmission d'Entreprise</div>
+                  <div className="keyword">Adhésion & Engagement</div>
+                  <div className="keyword">Brand Equity</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </div>
-    </section>
+    </>
   );
 }

@@ -7,73 +7,95 @@ interface UseCasesProps {
 const translations = {
   fr: {
     title: 'Use Cases',
-    subtitle: 'Découvrez comment Core-Sense transforme les organisations',
     cases: [
       {
-        title: 'Transformation Culturelle',
-        description: 'Accompagnement d\'une entreprise tech dans sa transformation culturelle post-fusion',
-        result: '+40% engagement collaborateurs'
+        icon: '🌍',
+        title: 'Expansion Internationale',
+        subtitle: 'Marque en forte croissance qui s\'internationalise',
+        description: 'Comment préserver son authenticité en accélérant le déploiement tout en s\'adaptant aux cultures locales ? Clarification du framework ADN du cadre d\'autonomie des équipes, et des outils de pilotage du déploiement pour adapter sans diluer, formation de l\'ensemble des équipes internationales.',
+        result: 'Efficacité opérationnelle des équipes renforcée, cohérence ADN renforcée sur tous les points de contact, framework de pilotage multilingue pour les outils d\'IA.'
       },
       {
-        title: 'Alignement Stratégique',
-        description: 'Réalignement des valeurs et pratiques d\'une scale-up en hypercroissance',
-        result: '+60% rétention talents'
+        icon: '🏛',
+        title: 'Transmission d\'Entreprise Familiale',
+        subtitle: 'Passage de relais intergénérationnel',
+        description: 'Comment transmettre l\'ADN aux nouvelles générations et leur donner toute la latitude dont ils ont besoin pour moderniser sans perdre l\'âme de la maison ? Formalisation de l\'ADN et des fondamentaux + clarification du framework ADN et formalisation des outils de transmission et d\'innovation alignée.',
+        result: 'Sérénité dans la transmission, lâcher prise des générations de fondateurs, confiance et latitude pour les nouvelles générations.'
       },
       {
-        title: 'Performance Équipe',
-        description: 'Optimisation de la cohésion et performance d\'équipes dirigeantes',
-        result: '+35% efficacité décisionnelle'
+        icon: '💎',
+        title: 'Intégration M&A',
+        subtitle: 'Entreprise récemment acquise ou en phase d\'acquisition',
+        description: 'Comment évaluer la compatibilité culturelle de la nouvelle entité et sa capacité à intégrer le nouvel ensemble sans se renier ? Comment préserver/fusionner les cultures et maintenir la différenciation dans le respect des apports de valeurs complémentaires ? Diagnostic de compatibilité + plan d\'intégration culturelle + Clarification du framework ADN commun et des territoires de valeur complémentaires.',
+        result: 'Intégration réussie.'
       },
       {
-        title: 'Innovation Culture',
-        description: 'Développement d\'une culture d\'innovation dans un groupe industriel',
-        result: '+50% projets innovants'
+        icon: '⚡',
+        title: 'Repositionnement / Rebranding',
+        subtitle: 'Gestion de crise pour dérive ADN',
+        description: 'Comment se renouveler fortement tout en restant authentique sans perdre ses équipes et ses clients ? Comment réengager ses collaborateurs tout en évitant la dilution de marque ? Clarification du framework ADN + formation de l\'ensemble des collaborateurs, Clarification du territoire de légitimité et d\'innovation, nouveau plan stratégique aligné, plan d\'activation rapide sur tous les touchpoints.',
+        result: 'Reprise de confiance du marché, Réengagement des équipes, Plan d\'innovation réaligné, Repositionnement campagne de communication.'
       },
       {
-        title: 'Change Management',
-        description: 'Accompagnement du changement lors d\'une restructuration majeure',
-        result: '+70% adhésion au changement'
+        icon: '🚀',
+        title: 'Scale-up et Changement de Management',
+        subtitle: 'Start-up/PME en forte croissance',
+        description: 'Comment maintenir la culture et l\'ADN malgré la croissance rapide ? Comment onboarder rapidement les nouvelles équipes et les former à l\'appropriation des fondamentaux ? Structuration de l\'identité + outils d\'onboarding + autonomisation équipes + structuration du purpose, mission et vision pour la direction générale, territoire de légitimité pour le renouvellement de l\'offre + accompagnement du positionnement entreprise à mission pour engager les équipes.',
+        result: '100% des équipes formées en 1 an, équipes réengagées, vision managériale partagée déployée.'
       },
       {
-        title: 'Leadership Development',
-        description: 'Développement du leadership authentique des managers',
-        result: '+45% satisfaction équipes'
+        icon: '📱',
+        title: 'Passage à l\'Échelle Creator Economy',
+        subtitle: 'Marque de luxe dans la cosmétique',
+        description: 'Comment sélectionner, former et contrôler des centaines de micro-influenceurs sans diluer l\'ADN de marque ? Comment limiter le risque de dilution massive avec la multiplication des créateurs de contenu et maintenir la cohérence sur des milliers de posts/vidéos ? Critères de sélection des influenceurs "DNA-fit", Framework de formation accélérée à l\'ADN, Guidelines créatives automatisées, contrôle qualité des contenus, dashboard de suivi de la congruence par créateur.',
+        result: 'Des influenceurs rapidement opérationnels et dans l\'axe de l\'ADN de la marque, un suivi et un pilotage consolidé pour les micro-influenceurs.'
       }
     ]
   },
   en: {
     title: 'Use Cases',
-    subtitle: 'Discover how Core-Sense transforms organizations',
     cases: [
       {
-        title: 'Cultural Transformation',
-        description: 'Supporting a tech company in its post-merger cultural transformation',
-        result: '+40% employee engagement'
+        icon: '🌍',
+        title: 'International Expansion',
+        subtitle: 'Fast-growing brand going international',
+        description: 'How to preserve authenticity while accelerating deployment and adapting to local cultures? Clarification of the DNA framework for team autonomy and deployment management tools to adapt without diluting, training of all international teams.',
+        result: 'Enhanced operational efficiency of teams, strengthened DNA consistency across all touchpoints, multilingual management framework for AI tools.'
       },
       {
-        title: 'Strategic Alignment',
-        description: 'Realigning values and practices of a hypergrowth scale-up',
-        result: '+60% talent retention'
+        icon: '🏛',
+        title: 'Family Business Succession',
+        subtitle: 'Intergenerational handover',
+        description: 'How to pass on the DNA to new generations and give them the latitude they need to modernize without losing the soul of the house? Formalization of DNA and fundamentals + clarification of DNA framework and formalization of transmission and aligned innovation tools.',
+        result: 'Serenity in transmission, letting go of founder generations, trust and latitude for new generations.'
       },
       {
-        title: 'Team Performance',
-        description: 'Optimizing cohesion and performance of leadership teams',
-        result: '+35% decision-making efficiency'
+        icon: '💎',
+        title: 'M&A Integration',
+        subtitle: 'Recently acquired company or in acquisition phase',
+        description: 'How to assess the cultural compatibility of the new entity and its ability to integrate the new whole without denying itself? How to preserve/merge cultures and maintain differentiation while respecting complementary value contributions? Compatibility diagnosis + cultural integration plan + Clarification of common DNA framework and complementary value territories.',
+        result: 'Successful integration.'
       },
       {
-        title: 'Innovation Culture',
-        description: 'Developing an innovation culture in an industrial group',
-        result: '+50% innovative projects'
+        icon: '⚡',
+        title: 'Repositioning / Rebranding',
+        subtitle: 'Crisis management for DNA drift',
+        description: 'How to renew strongly while remaining authentic without losing teams and customers? How to re-engage employees while avoiding brand dilution? DNA framework clarification + training of all employees, Clarification of legitimacy and innovation territory, new aligned strategic plan, rapid activation plan on all touchpoints.',
+        result: 'Market confidence recovery, Team re-engagement, Realigned innovation plan, Communication campaign repositioning.'
       },
       {
-        title: 'Change Management',
-        description: 'Supporting change during a major restructuring',
-        result: '+70% change adoption'
+        icon: '🚀',
+        title: 'Scale-up and Management Change',
+        subtitle: 'Fast-growing start-up/SME',
+        description: 'How to maintain culture and DNA despite rapid growth? How to quickly onboard new teams and train them in the appropriation of fundamentals? Identity structuring + onboarding tools + team empowerment + structuring of purpose, mission and vision for general management, legitimacy territory for offer renewal + support for mission-driven company positioning to engage teams.',
+        result: '100% of teams trained in 1 year, re-engaged teams, shared management vision deployed.'
       },
       {
-        title: 'Leadership Development',
-        description: 'Developing authentic leadership in managers',
-        result: '+45% team satisfaction'
+        icon: '📱',
+        title: 'Creator Economy Scaling',
+        subtitle: 'Luxury brand in cosmetics',
+        description: 'How to select, train and control hundreds of micro-influencers without diluting brand DNA? How to limit the risk of massive dilution with the multiplication of content creators and maintain consistency across thousands of posts/videos? "DNA-fit" influencer selection criteria, Accelerated DNA training framework, Automated creative guidelines, content quality control, creator congruence tracking dashboard.',
+        result: 'Influencers quickly operational and aligned with brand DNA, consolidated tracking and management for micro-influencers.'
       }
     ]
   }
@@ -83,38 +105,26 @@ export default function UseCases({ language }: UseCasesProps) {
   const t = translations[language];
 
   return (
-    <section id="use-cases" className="py-20 lg:py-32 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16 lg:mb-24">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 gradient-text">
-            {t.title}
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            {t.subtitle}
-          </p>
-        </div>
-
-        {/* Use Cases Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+    <>
+      <section id="usecases" className="section">
+        <div className="container">
+          <h2 className="section-title" id="usecases-title">{t.title}</h2>
+          <div className="usecases-grid">
           {t.cases.map((useCase, index) => (
-            <div
-              key={index}
-              className="bg-gray-900 border border-gray-800 rounded-xl p-6 lg:p-8 hover:border-gray-600 transition-all duration-300 transform hover:scale-105"
-            >
-              <h3 className="text-xl lg:text-2xl font-bold mb-4 text-white">
-                {useCase.title}
-              </h3>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                {useCase.description}
-              </p>
-              <div className="bg-white text-black px-4 py-2 rounded-lg font-semibold text-sm inline-block">
-                {useCase.result}
+              <div key={index} className="usecase-card">
+                <span className="usecase-icon">{useCase.icon}</span>
+                <h3 id={`case${index + 1}-title`}>{useCase.title}</h3>
+                <p className="usecase-subtitle" id={`case${index + 1}-subtitle`}>{useCase.subtitle}</p>
+                <p id={`case${index + 1}-desc`}>{useCase.description}</p>
+                <div className="usecase-result">
+                  <strong>Résultat :</strong> <span id={`case${index + 1}-result`}>{useCase.result}</span>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
+
+    </>
   );
 }

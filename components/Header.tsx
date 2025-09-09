@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Logo from './logo';
 
 interface HeaderProps {
   language: 'fr' | 'en';
@@ -11,121 +10,108 @@ interface HeaderProps {
 const translations = {
   fr: {
     approach: 'Notre Approche',
+    vision: 'Vision',
     useCases: 'Use Cases',
-    services: 'Services',
-    assessment: 'Assessment DNA'
+    assessment: 'Assessment',
+    contact: 'Contact'
   },
   en: {
     approach: 'Our Approach',
+    vision: 'Vision',
     useCases: 'Use Cases',
-    services: 'Services',
-    assessment: 'DNA Assessment'
+    assessment: 'Assessment',
+    contact: 'Contact'
   }
 };
 
 export default function Header({ language, setLanguage }: HeaderProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const t = translations[language];
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'fr' ? 'en' : 'fr');
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Logo />
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#notre-approche" className="text-gray-300 hover:text-white transition-colors duration-300">
-              {t.approach}
-            </a>
-            <a href="#use-cases" className="text-gray-300 hover:text-white transition-colors duration-300">
-              {t.useCases}
-            </a>
-            <a href="#services" className="text-gray-300 hover:text-white transition-colors duration-300">
-              {t.services}
-            </a>
-            <a href="#assessment" className="text-gray-300 hover:text-white transition-colors duration-300">
-              {t.assessment}
-            </a>
-          </nav>
-
-          {/* Language Switcher & Mobile Menu Button */}
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={() => setLanguage('fr')}
-                className={`px-2 py-1 text-sm font-medium transition-colors duration-300 ${
-                  language === 'fr' ? 'text-white' : 'text-gray-500 hover:text-gray-300'
-                }`}
-              >
-                FR
-              </button>
-              <span className="text-gray-600">|</span>
-              <button
-                onClick={() => setLanguage('en')}
-                className={`px-2 py-1 text-sm font-medium transition-colors duration-300 ${
-                  language === 'en' ? 'text-white' : 'text-gray-500 hover:text-gray-300'
-                }`}
-              >
-                EN
-              </button>
-            </div>
-
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 text-gray-300 hover:text-white"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
+    <>
+      <header className="header">
+        <div className="container">
+          <div className="header-content">
+            <div className="logo-section">
+              <svg className="logo" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{stopColor:'#000000', stopOpacity:1}} />
+                    <stop offset="100%" style={{stopColor:'#1a1a1a', stopOpacity:1}} />
+                  </linearGradient>
+                  <filter id="logoShadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="2" dy="4" stdDeviation="3" floodColor="#000000" floodOpacity="0.3"/>
+                  </filter>
+                </defs>
+                <text x="20" y="80" fontFamily="Inter, sans-serif" fontSize="52" fontWeight="700" fill="url(#logoGradient)" filter="url(#logoShadow)">Core-</text>
+                <text x="20" y="140" fontFamily="Inter, sans-serif" fontSize="40" fontWeight="300" fontStyle="italic" fill="url(#logoGradient)" filter="url(#logoShadow)">Sense</text>
+                <path d="M10 160 L60 120" stroke="#000" strokeWidth="4" strokeLinecap="round" filter="url(#logoShadow)"/>
               </svg>
+              <span className="tagline">Turn DNA into Strategic Asset</span>
+            </div>
+            
+            {/* Desktop Navigation */}
+            <nav className="nav desktop-nav">
+              <a href="#approach" className="nav-link">{translations[language].approach}</a>
+              <a href="#vision" className="nav-link">{translations[language].vision}</a>
+              <a href="#usecases" className="nav-link">{translations[language].useCases}</a>
+              <a href="#assessment" className="nav-link">{translations[language].assessment}</a>
+              <a href="#contact" className="nav-link">{translations[language].contact}</a>
+              <button className="language-toggle" onClick={toggleLanguage}>
+                {language === 'fr' ? 'EN' : 'FR'}
+              </button>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="mobile-menu-btn"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              <span className={`hamburger-line ${isMobileMenuOpen ? 'active' : ''}`}></span>
+              <span className={`hamburger-line ${isMobileMenuOpen ? 'active' : ''}`}></span>
+              <span className={`hamburger-line ${isMobileMenuOpen ? 'active' : ''}`}></span>
             </button>
           </div>
-        </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-800">
-            <nav className="flex flex-col space-y-4">
-              <a
-                href="#notre-approche"
-                className="text-gray-300 hover:text-white transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t.approach}
+          {/* Mobile Navigation */}
+          <nav className={`mobile-nav ${isMobileMenuOpen ? 'open' : ''}`}>
+            <div className="mobile-nav-content">
+              <a href="#approach" className="mobile-nav-link" onClick={closeMobileMenu}>
+                {translations[language].approach}
               </a>
-              <a
-                href="#use-cases"
-                className="text-gray-300 hover:text-white transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t.useCases}
+              <a href="#vision" className="mobile-nav-link" onClick={closeMobileMenu}>
+                {translations[language].vision}
               </a>
-              <a
-                href="#services"
-                className="text-gray-300 hover:text-white transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t.services}
+              <a href="#usecases" className="mobile-nav-link" onClick={closeMobileMenu}>
+                {translations[language].useCases}
               </a>
-              <a
-                href="#assessment"
-                className="text-gray-300 hover:text-white transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t.assessment}
+              <a href="#assessment" className="mobile-nav-link" onClick={closeMobileMenu}>
+                {translations[language].assessment}
               </a>
-            </nav>
-          </div>
-        )}
-      </div>
-    </header>
+              <a href="#contact" className="mobile-nav-link" onClick={closeMobileMenu}>
+                {translations[language].contact}
+              </a>
+              <button className="mobile-language-toggle" onClick={toggleLanguage}>
+                {language === 'fr' ? 'EN' : 'FR'}
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+    </>
   );
 }

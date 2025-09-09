@@ -7,47 +7,41 @@ interface ApproachProps {
 const translations = {
   fr: {
     title: 'Notre Approche',
-    subtitle: 'Une méthodologie éprouvée pour révéler et optimiser la congruence organisationnelle',
-    blocks: [
-      {
-        title: 'Analyse DNA',
-        description: 'Évaluation complète de votre ADN organisationnel à travers 5 dimensions clés'
-      },
-      {
-        title: 'Diagnostic',
-        description: 'Identification des écarts entre valeurs déclarées et pratiques réelles'
-      },
-      {
-        title: 'Stratégie',
-        description: 'Plan d\'action personnalisé pour améliorer la congruence organisationnelle'
-      },
-      {
-        title: 'Accompagnement',
-        description: 'Suivi et coaching pour assurer la transformation durable'
-      }
-    ]
+    emotional: {
+      title: 'Levier Émotionnel',
+      description: 'Nous révélons le levier émotionnel de votre ADN, celui qui crée l\'attachement et la fidélité de vos clients. C\'est le cœur battant de votre marque, sa singularité profonde.'
+    },
+    rational: {
+      title: 'Levier Rationnel',
+      description: 'Nous activons le levier rationnel de votre ADN, pour bâtir la crédibilité, la performance et la croissance durable de votre entreprise.'
+    },
+    holistic: {
+      title: 'Approche Holistique',
+      description: 'Nous orchestrons l\'ensemble pour créer une expérience cohérente et distinctive à chaque point de contact. C\'est l\'équilibre parfait entre émotion et raison, entre authenticité et performance.'
+    },
+    guidance: {
+      title: 'Guidance Stratégique et Opérationnelle',
+      description: 'Nous transformons votre ADN en boussole stratégique et opérationnelle, pour orienter vos décisions et piloter vos actions. C\'est votre guide dans la complexité du marché, votre ancrage dans la tempête des tendances.'
+    }
   },
   en: {
     title: 'Our Approach',
-    subtitle: 'A proven methodology to reveal and optimize organizational congruence',
-    blocks: [
-      {
-        title: 'DNA Analysis',
-        description: 'Complete assessment of your organizational DNA through 5 key dimensions'
-      },
-      {
-        title: 'Diagnosis',
-        description: 'Identification of gaps between declared values and actual practices'
-      },
-      {
-        title: 'Strategy',
-        description: 'Personalized action plan to improve organizational congruence'
-      },
-      {
-        title: 'Support',
-        description: 'Follow-up and coaching to ensure sustainable transformation'
-      }
-    ]
+    emotional: {
+      title: 'Emotional Lever',
+      description: 'We reveal the emotional lever of your DNA, the one that creates attachment and loyalty from your customers. It\'s the beating heart of your brand, its profound uniqueness.'
+    },
+    rational: {
+      title: 'Rational Lever',
+      description: 'We activate the rational lever of your DNA, to build credibility, performance and sustainable growth of your company.'
+    },
+    holistic: {
+      title: 'Holistic Approach',
+      description: 'We orchestrate everything to create a coherent and distinctive experience at every touchpoint. It\'s the perfect balance between emotion and reason, between authenticity and performance.'
+    },
+    guidance: {
+      title: 'Strategic and Operational Guidance',
+      description: 'We transform your DNA into a strategic and operational compass, to guide your decisions and steer your actions. It\'s your guide in market complexity, your anchor in the storm of trends.'
+    }
   }
 };
 
@@ -55,38 +49,35 @@ export default function Approach({ language }: ApproachProps) {
   const t = translations[language];
 
   return (
-    <section id="notre-approche" className="py-20 lg:py-32 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16 lg:mb-24">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 gradient-text">
-            {t.title}
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            {t.subtitle}
-          </p>
-        </div>
-
-        {/* Approach Blocks */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {t.blocks.map((block, index) => (
-            <div
-              key={index}
-              className="bg-black border border-gray-800 rounded-xl p-6 lg:p-8 hover:border-gray-600 transition-all duration-300 transform hover:scale-105"
-            >
-              <div className="w-12 h-12 lg:w-16 lg:h-16 bg-white rounded-lg flex items-center justify-center mb-6">
-                <span className="text-black font-bold text-xl lg:text-2xl">{index + 1}</span>
-              </div>
-              <h3 className="text-xl lg:text-2xl font-bold mb-4 text-white">
-                {block.title}
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                {block.description}
-              </p>
+    <>
+      <section id="approach" className="section approach">
+        <div className="container">
+          <h2 className="section-title" id="approach-title">{t.title}</h2>
+          <div className="approach-grid">
+            <div className="approach-card">
+              <span className="approach-icon">♥</span>
+              <h3 id="emotional-title">{t.emotional.title}</h3>
+              <p id="emotional-desc">{t.emotional.description}</p>
             </div>
-          ))}
+            <div className="approach-card">
+              <span className="approach-icon">⚖</span>
+              <h3 id="rational-title">{t.rational.title}</h3>
+              <p id="rational-desc">{t.rational.description}</p>
+            </div>
+            <div className="approach-card">
+              <span className="approach-icon">↻</span>
+              <h3 id="holistic-title">{t.holistic.title}</h3>
+              <p id="holistic-desc">{t.holistic.description}</p>
+            </div>
+            <div className="approach-card">
+              <span className="approach-icon">⊕</span>
+              <h3 id="guidance-title">{t.guidance.title}</h3>
+              <p id="guidance-desc">{t.guidance.description}</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+    </>
   );
 }
