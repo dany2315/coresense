@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Approach from './components/Approach';
-import UseCases from './components/UseCases';
-import Services from './components/Services';
-import Assessment from './components/Assessment';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import Approach from '../components/Approach';
+import UseCases from '../components/UseCases';
+import Services from '../components/Services';
+import Assessment from '../components/Assessment';
 
 export default function Home() {
   const [language, setLanguage] = useState<'fr' | 'en'>('fr');

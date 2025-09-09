@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
+import Logo from './logo';
 
 interface HeaderProps {
   language: 'fr' | 'en';
@@ -33,14 +33,7 @@ export default function Header({ language, setLanguage }: HeaderProps) {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Image
-              src="/logo.png"
-              alt="Core-Sense"
-              width={150}
-              height={40}
-              className="h-8 lg:h-10 w-auto"
-              priority
-            />
+            <Logo />
           </div>
 
           {/* Desktop Navigation */}

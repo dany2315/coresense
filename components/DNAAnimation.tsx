@@ -27,8 +27,8 @@ export default function DNAAnimation() {
           {Array.from({ length: 20 }, (_, i) => {
             const y = 10 + (i * 9);
             const phase = (i * 0.5) % (2 * Math.PI);
-            const x1 = 100 + 30 * Math.sin(phase);
-            const x2 = 100 + 30 * Math.sin(phase + Math.PI);
+            const x1 = Number(100 + 30 * Math.sin(phase));
+            const x2 = Number(100 + 30 * Math.sin(phase + Math.PI));
             
             return (
               <g key={i}>
