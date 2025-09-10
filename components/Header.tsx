@@ -55,8 +55,8 @@ export default function Header({ language, setLanguage }: HeaderProps) {
                     <feDropShadow dx="2" dy="4" stdDeviation="3" floodColor="#000000" floodOpacity="0.3"/>
                   </filter>
                 </defs>
-                <text x="20" y="80" fontFamily="Inter, sans-serif" fontSize="52" fontWeight="700" fill="url(#logoGradient)" filter="url(#logoShadow)">Core-</text>
-                <text x="20" y="140" fontFamily="Inter, sans-serif" fontSize="40" fontWeight="300" fontStyle="italic" fill="url(#logoGradient)" filter="url(#logoShadow)">Sense</text>
+                <text x="20" y="80" fontFamily="Inter, sans-serif" fontSize="52" fontWeight="700" fill="url(#logoGradient)" filter="url(#logoShadow)" stroke="#000" strokeWidth="1">Core-</text>
+                <text x="20" y="140" fontFamily="Inter, sans-serif" fontSize="40" fontWeight="300" fontStyle="italic" fill="url(#logoGradient)" filter="url(#logoShadow)" stroke="#000" strokeWidth="1">Sense</text>
                 <path d="M10 160 L60 120" stroke="#000" strokeWidth="4" strokeLinecap="round" filter="url(#logoShadow)"/>
               </svg>
               <span className="tagline">Turn DNA into Strategic Asset</span>
