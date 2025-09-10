@@ -107,7 +107,7 @@ export default function Hero({ language }: HeroProps) {
                   <div className="keyword">Profitabilité</div>
                   <div className="keyword">Performance Opérationnelle</div>
                   <div className="keyword">Leadership Authentique</div>
-                  <div className="keyword">Transmission d'Entreprise</div>
+                  <div className="keyword">Transmission d&apos;Entreprise</div>
                   <div className="keyword">Adhésion & Engagement</div>
                   <div className="keyword">Brand Equity</div>
                 </div>
