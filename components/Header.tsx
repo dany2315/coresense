@@ -51,7 +51,6 @@ export default function Header({ language, setLanguage }: HeaderProps) {
                     <stop offset="0%" style={{stopColor:'#000000', stopOpacity:1}} />
                     <stop offset="100%" style={{stopColor:'#1a1a1a', stopOpacity:1}} />
                   </linearGradient>
-
                 </defs>
                 <text x="20" y="80" fontFamily="Inter, sans-serif" fontSize="52" fontWeight="700" fill="url(#logoGradient)" filter="url(#logoShadow)" stroke="#000" strokeWidth="1" style={{ filter: "drop-shadow(2px 4px 3px rgba(0,0,0,0.3))" }}>Core-</text>
                 <text x="20" y="140" fontFamily="Inter, sans-serif" fontSize="40" fontWeight="300" fontStyle="italic" fill="url(#logoGradient)" filter="url(#logoShadow)" stroke="#000" strokeWidth="1" style={{ filter: "drop-shadow(2px 4px 3px rgba(0,0,0,0.3))" }}>Sense</text>
