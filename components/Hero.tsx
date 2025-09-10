@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 interface HeroProps {
   language: 'fr' | 'en';
@@ -8,7 +8,7 @@ interface HeroProps {
 
 const translations = {
   fr: {
-    title: 'Révéler et Activer l\'ADN<br>de votre entreprise',
+    title: 'Révéler et Activer l&apos;ADN<br>de votre entreprise',
     subtitle: 'Notre méthodologie révèle, modélise et active l\'ADN unique pour faire croître la valeur patrimoniale, économique et humaine de votre entreprise.'
   },
   en: {
@@ -19,7 +19,6 @@ const translations = {
 
 export default function Hero({ language }: HeroProps) {
   const t = translations[language];
-  const dnaHelixRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const initDNAHelix = () => {
@@ -108,7 +107,7 @@ export default function Hero({ language }: HeroProps) {
                   <div className="keyword">Profitabilité</div>
                   <div className="keyword">Performance Opérationnelle</div>
                   <div className="keyword">Leadership Authentique</div>
-                  <div className="keyword">Transmission d'Entreprise</div>
+                  <div className="keyword">Transmission d&apos;Entreprise</div>
                   <div className="keyword">Adhésion & Engagement</div>
                   <div className="keyword">Brand Equity</div>
                 </div>

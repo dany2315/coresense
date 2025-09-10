@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface AssessmentProps {
   language: 'fr' | 'en';
@@ -138,12 +138,11 @@ const assessmentData = {
 export default function Assessment({ language }: AssessmentProps) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<{ [key: number]: number }>({});
-  const [showResults, setShowResults] = useState(false);
 
   const data = assessmentData[language];
   const totalQuestions = data.categories.length * 5;
 
-  const updateQuestion = () => {
+  const updateQuestion = useCallback(() => {
     const categoryIndex = Math.floor(currentQuestionIndex / 5);
     const questionInCategory = currentQuestionIndex % 5;
     
@@ -227,7 +226,7 @@ export default function Assessment({ language }: AssessmentProps) {
         nextBtn.textContent = language === 'fr' ? 'Suivant' : 'Next';
       }
     }
-  };
+  }, [currentQuestionIndex, totalQuestions, data, answers]);
 
   const selectRating = (rating: number) => {
     setAnswers(prev => ({ ...prev, [currentQuestionIndex]: rating }));
@@ -308,25 +307,10 @@ export default function Assessment({ language }: AssessmentProps) {
     }
   };
 
-  const restartAssessment = () => {
-    setCurrentQuestionIndex(0);
-    setAnswers({});
-    setShowResults(false);
-    
-    const questionContainer = document.getElementById('question-container');
-    const results = document.getElementById('results');
-    
-    if (questionContainer) {
-      questionContainer.style.display = 'block';
-    }
-    if (results) {
-      results.classList.remove('show');
-    }
-  };
 
   useEffect(() => {
     updateQuestion();
-  }, [currentQuestionIndex, language]);
+  }, [currentQuestionIndex, language, updateQuestion]);
 
   return (
     <>
@@ -364,11 +348,11 @@ export default function Assessment({ language }: AssessmentProps) {
               </div>
 
               <div className="rating-descriptions">
-                <div className="rating-desc" id="rating-desc-1">Pas du tout d'accord</div>
-                <div className="rating-desc" id="rating-desc-2">Plutôt pas d'accord</div>
-                <div className="rating-desc" id="rating-desc-3">Moyennement d'accord</div>
-                <div className="rating-desc" id="rating-desc-4">Plutôt d'accord</div>
-                <div className="rating-desc" id="rating-desc-5">Tout à fait d'accord</div>
+                <div className="rating-desc" id="rating-desc-1">Pas du tout d&apos;accord</div>
+                <div className="rating-desc" id="rating-desc-2">Plutôt pas d&apos;accord</div>
+                <div className="rating-desc" id="rating-desc-3">Moyennement d&apos;accord</div>
+                <div className="rating-desc" id="rating-desc-4">Plutôt d&apos;accord</div>
+                <div className="rating-desc" id="rating-desc-5">Tout à fait d&apos;accord</div>
               </div>
 
               <div className="navigation-buttons">
