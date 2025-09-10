@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Logo from './logo';
+import Image from 'next/image';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 interface HeaderProps {
   language: 'fr' | 'en';
@@ -40,13 +41,15 @@ export default function Header({ language, setLanguage }: HeaderProps) {
     setIsMobileMenuOpen(false);
   };
 
+  const isMobile = useIsMobile();
+
   return (
     <>
       <header className="header">
         <div className="container">
           <div className="header-content">
             <div className="logo-section">
-              <Logo />  
+              <Image src="/logo.png" alt="Core-Sense" width={isMobile ? 140 : 280} height={isMobile ? 100 : 140} />
               <span className="tagline">Turn DNA into Strategic Asset</span>
             </div>
             
