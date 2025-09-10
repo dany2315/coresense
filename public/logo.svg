@@ -1,2 +1,23 @@
-<!-- This file should contain the Core-Sense logo. Since we cannot create binary files, 
-     you'll need to add your logo.png file to the public directory manually. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="1" />
+      <stop offset="100%" stop-color="#1a1a1a" stop-opacity="1" />
+    </linearGradient>
+  </defs>
+
+  <text x="20" y="80" font-family="Inter, sans-serif" font-size="52" font-weight="700"
+        fill="url(#logoGradient)" stroke="#000" stroke-width="1"
+        style="filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.3));">
+    Core-
+  </text>
+
+  <text x="20" y="140" font-family="Inter, sans-serif" font-size="40" font-weight="300"
+        font-style="italic" fill="url(#logoGradient)" stroke="#000" stroke-width="1"
+        style="filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.3));">
+    Sense
+  </text>
+
+  <path d="M10 160 L60 120" stroke="#000" stroke-width="4" stroke-linecap="round"
+        style="filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.3));"/>
+</svg>
